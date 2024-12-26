@@ -1,0 +1,27 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+<footer class="footer mt-auto py-3">
+  <div class="container footer-container">
+    {% if site.footer-links.email %}
+    <a class="footer-icon-links" href="mailto:{{ site.footer-links.email }}" title="Email"><i
+        class="fa-solid fa-square-envelope" style="font-size:36px"></i></a>
+
+    {% endif %} {% if site.footer-links.twitter %}
+    <a class="footer-icon-links" href="https://twitter.com/{{ site.footer-links.twitter }}" title="GitHub"><i
+        class="fa-brands fa-square-twitter" style="font-size:36px"></i></a>
+
+    {% endif %} {% if site.footer-links.github %}
+    <a class="footer-icon-links" href="https://github.com/{{ site.footer-links.github }}" title="GitHub"><i
+        class="fa-brands fa-square-github" style="font-size:36px"></i></a>
+
+    {% endif %} {% if site.footer-links.gitlab %}
+    <a class="footer-icon-links" href="https://gitlab.com/{{ site.footer-links.gitlab }}" title="GitLab"><i
+        class="fa-brands fa-square-gitlab" style="font-size:36px"></i></a>
+
+    {% endif %} {% if site.footer-links.linkedin %}
+    <a class="footer-icon-links" href="https://www.linkedin.com/{{ site.footer-links.linkedin }}" title="Linkedin"><i
+        class="fa-brands fa-linkedin" style="font-size:36px"></i></a>
+
+    {% endif %}
+  </div>
+</footer>

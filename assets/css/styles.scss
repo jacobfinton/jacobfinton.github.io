@@ -1,0 +1,25 @@
+---
+---
+
+@import "bootstrap-dark";
+@import "syntax-highlighting";
+@import "main";
+
+
+
+.ide {
+    text-align: left;
+    font-size: 10px;
+    border-radius: 5px;
+    padding-top: 5px;
+    background: #ccc;
+    font-family: 'Monaco', 'Courier New';
+    color: #fafafa;
+}
+.ide1 {
+    padding: 40px;
+    border-radius: 2px;
+    height: 400px;
+    font-size: 15px;
+    background: #383737;
+}

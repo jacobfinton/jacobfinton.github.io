@@ -1,0 +1,37 @@
+---
+layout: default
+---
+
+<!-- This is the Introduction-->
+<div class="row p-5 mb-4 bg-light rounded-3">
+  <div class="col-md-4 rounded-corner">
+    <img class="rounded" src="assets/images/Rocco.jpg" alt="Generic placeholder image" height="440" width="320">
+  </div>
+  <div class="col-md-8">
+    <div class="ide">
+      <small>Jake@dev.local</small>
+      <div class="ide1">
+        <h5>Hey Internet!</h5>
+        <p>
+          Welcome to my page! I have many interests, but majority of the time you can find me spending time with family
+          and friends,
+          working on odd tech projects or doing something outdoorsy. If you are interested in learning more about me or
+          viewing something similar to a blog, continue exploring my site!
+        </p>
+        <br />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row align-items-md-stretch">
+  <h3 class="d-flex justify-content-center">Most Recent posts</h3>
+  {% for post in site.posts limit:5%}
+  <div class="col-md-6">
+    <div class="h-100 p-5 text-white bg-dark rounded-3">
+      <span class="post-date archive-date fs-4">{{ post.date | date: "%B %d, %Y" }}</span>
+      <a href="{{ post.url | relative_url }}" class="archive-title fs-4">{{ post.title }}</a>
+    </div>
+  </div>
+  {% endfor %}
+</div>
