@@ -66,37 +66,36 @@ So far this has met all of my requirements, but I believe there is still room fo
 
 ```sh
 # Paths
-MAIN_CONFIG="$HOME/config"
-SUBCONFIG_DIR="$HOME/config/git"
+CONFIG_DIR="$HOME/.config/git"
 
 # Create the .gitconfigs directory if it doesn't exist
-mkdir -p "$SUBCONFIG_DIR"
+mkdir -p "$CONFIG_DIR"
 
 # Create the main config
-cat > "$MAIN_CONFIG" <<EOF
+cat > "$CONFIG_DIR/config" <<EOF
 [include]
-    path = $SUBCONFIG_DIR/gitconfig_base
+    path = $CONFIG_DIR/gitconfig_base
 
 # Default profile for anything not covered in subconfigs
 [includeIf "gitdir:~/repos/"]
-    path = $SUBCONFIG_DIR/gitconfig_default
+    path = $CONFIG_DIR/gitconfig_default
 
 [includeIf "gitdir:~/repos/gitlab/"]
-    path = $SUBCONFIG_DIR/gitconfig_gitlab
+    path = $CONFIG_DIR/gitconfig_gitlab
 
 [includeIf "gitdir:~/repos/github/"]
-    path = $SUBCONFIG_DIR/gitconfig_github
+    path = $CONFIG_DIR/gitconfig_github
 
 [includeIf "gitdir:~/repos/work_github/"]
-    path = $SUBCONFIG_DIR/gitconfig_work_github
+    path = $CONFIG_DIR/gitconfig_work_github
 
 [includeIf "gitdir:~/repos/school_github/"]
-    path = $SUBCONFIG_DIR/gitconfig_school_github
+    path = $CONFIG_DIR/gitconfig_school_github
 EOF
 
 # Create the subconfig files for each profile
 # Base configuration (common settings)
-cat > "$SUBCONFIG_DIR/gitconfig_base" <<EOF
+cat > "$CONFIG_DIR/gitconfig_base" <<EOF
 [alias]
     st = status
     co = checkout
@@ -108,14 +107,14 @@ cat > "$SUBCONFIG_DIR/gitconfig_base" <<EOF
 EOF
 
 # Default configuration (global username/email)
-cat > "$SUBCONFIG_DIR/gitconfig_default" <<EOF
+cat > "$CONFIG_DIR/gitconfig_default" <<EOF
 [user]
     name = Default User
     email = default.user@example.com
 EOF
 
 # GitLab profile
-cat > "$SUBCONFIG_DIR/gitconfig_gitlab" <<EOF
+cat > "$CONFIG_DIR/gitconfig_gitlab" <<EOF
 [user]
     name = GitLab User
     email = gitlab.user@example.com
@@ -125,14 +124,14 @@ cat > "$SUBCONFIG_DIR/gitconfig_gitlab" <<EOF
 EOF
 
 # GitHub profile (general)
-cat > "$SUBCONFIG_DIR/gitconfig_github" <<EOF
+cat > "$CONFIG_DIR/gitconfig_github" <<EOF
 [user]
     name = GitHub User
     email = github.user@example.com
 EOF
 
 # Work GitHub profile
-cat > "$SUBCONFIG_DIR/gitconfig_work_github" <<EOF
+cat > "$CONFIG_DIR/gitconfig_work_github" <<EOF
 [user]
     name = Work GitHub User
     email = work.github.user@example.com
@@ -142,7 +141,7 @@ cat > "$SUBCONFIG_DIR/gitconfig_work_github" <<EOF
 EOF
 
 # School GitHub profile
-cat > "$SUBCONFIG_DIR/gitconfig_school_github" <<EOF
+cat > "$CONFIG_DIR/gitconfig_school_github" <<EOF
 [user]
     name = School GitHub User
     email = school.github.user@example.com
